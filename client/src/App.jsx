@@ -1,5 +1,30 @@
+import { Route, Routes } from "react-router-dom";
+import Create from "./components/Create";
+import Edit from "./components/Edit";
+import Record from "./components/Record";
+import RecordList from "./components/RecordList";
+
 function App() {
-	return <h1 className='text-lg text-yellow-500'>Hello World</h1>;
+	return (
+		<Routes>
+			<Route
+				path='/'
+				element={<RecordList />}
+			/>
+			<Route
+				path='/create'
+				element={<Create />}
+			/>
+			<Route
+				path='/update/:id'
+				element={<Edit />}
+			/>
+			<Route
+				path='/record/:id'
+				element={<Record />}
+			/>
+		</Routes>
+	);
 }
 
 export default App;
